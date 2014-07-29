@@ -1,0 +1,87 @@
+---
+# --------------------
+# Gitlab Configuration
+# --------------------
+# Specify the URL and API Key so that Grook can communicate with 
+# the Gitlab APIs.
+#
+# It is recommended to create new admin user for this purpose.
+# If the user is not configured as an admin, it will not be able
+# to see all available namespaces and projects.
+#
+gitlab:
+  url: "http://git.komprest.net"
+  port: 80
+  api_key: "aqs5HC9jQyGJibaeQpyf"
+# ------------------------
+# Web Server Configuration
+# ------------------------
+# Specify the port that grook will use when listening for
+# web hook servlet requests
+web:
+  port: 1337
+  log: "./log/web.log"
+# --------------------------
+# Servlet hook configuration
+# --------------------------
+# 
+# There are three types of hooks: "push","issue", and "merge"
+#
+# For a detailed description of these hooks, please
+# consult the Gitlab documentation.
+#
+# The "log" attribute specifies the location of the hook request
+# log file.  This file contains logging entries for hook calls
+# to the grook server.
+#
+# The "log_level" attribute specifies how detailed the logging
+# will be for each servlet.  DEBUG contains the most detail and 
+# FATAL contains the least.  INFO is the recommended setting
+# for logging.
+#
+# For each type of hook, you can define one or more
+# servlets to serve requests. 
+#
+# Common Attributes:
+#
+#   name:       Unique name for the hook.
+#
+#   repo:       SSH URL for Gitlab repository.
+#
+#   ref:        Git reference that will trigger scripts execution (push only).
+#               
+#   mount:      URL path to mount for the servlet.
+#               ie: /push would mount to http://example.com/push
+#
+#   log_level:  Log level for each respective servlet              
+#
+#   path:       Path to hook scripts.  To help manage dependencies,
+#               the scripts will be sorted and run in alphabetical 
+#               order.
+hooks:
+  log: "log/hook_request.log"
+  push: 
+    - name: "Standard Push Servlet"
+      repo: "git@git.komprest.net:codec/test-project.git"
+      ref: "refs/heads/master"
+      mount: "/push"
+      log_level: "INFO" # "DEBUG", "INFO", "WARN", "ERROR", "FATAL"
+      path: "./hooks/push.d"
+  tag:
+    - name: "Standard Tag Push Servlet"
+      repo: "git@git.komprest.net:codec/test-project.git"
+      mount: "/tag"
+      log_level: "INFO"
+      path: "./hooks/tag.d"
+  issue:
+    - name: "Standard Issue Servlet"
+      repo: "git@git.komprest.net:codec/test-project.git"
+      mount: "/issue"
+      log_level: "INFO"
+      path: "hooks/issue.d"
+  merge:
+    - name: "Standard Merge Servlet"
+      repo: "git@git.komprest.net:codec/test-project.git"
+      mount: "/merge"
+      log_level: "INFO"
+      path: "./hooks/merge.d"

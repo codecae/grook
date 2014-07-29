@@ -1,0 +1,6 @@
+require 'lib/hook'
+require 'lib/hooks/json_hook'
+require 'lib/hooks/push'
+require 'lib/hooks/tag'
+require 'lib/hooks/merge'
+require 'lib/hooks/issue'
