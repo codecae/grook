@@ -24,7 +24,13 @@ module Grook
       port = config["gitlab"]["port"]
       api_key = config["gitlab"]["api_key"]
       @gitlab = Gitlab::Server.new(url,port,api_key)
+      if config["web"]["bind_address"].nil?
+        puts "!! Bind address not specified.  Listening on all interfaces..."
+      else
+	puts sprintf(":: server listening on %s:%d\n",config["web"]["bind_address"],config["web"]["port"])
+      end
       @server = WEBrick::HTTPServer.new(:Port => config["web"]["port"],
+                                        :BindAddress => config["web"]["bind_address"],
 				        :Logger => WEBrick::Log.new(config["web"]["log"]),
 					:AccessLog => [ [$stderr, WEBrick::AccessLog::COMMON_LOG_FORMAT],
 						        [$stderr, WEBrick::AccessLog::REFERER_LOG_FORMAT] ])
@@ -53,8 +59,10 @@ module Grook
 
 end
 
+puts ":: grook initializing..."
 Grook.init
 trap 'INT'  do Grook.server.shutdown end
 trap 'SIGTERM' do Grook.server.shutdown end
+puts ":: starting server..."
 Grook.server.start
 
