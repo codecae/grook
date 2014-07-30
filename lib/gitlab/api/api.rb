@@ -7,8 +7,7 @@ module Grook
       private
 
       def _get_url(server,path_key)
-        server.uri + @paths[path_key]
-	#sprintf("%s:%d:%s",server.uri,server.port,@paths[path_key])
+	sprintf("%s:%d%s",server.uri,server.port,@paths[path_key])
       end
 
       public      
