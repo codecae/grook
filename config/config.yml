@@ -10,7 +10,7 @@
 # to see all available namespaces and projects.
 #
 gitlab:
-  url: "http://git.komprest.net"
+  url: "http://github.example.com"
   port: 80
   api_key: "aqs5HC9jQyGJibaeQpyf"
 # ------------------------
@@ -19,7 +19,7 @@ gitlab:
 # Specify the port that grook will use when listening for
 # web hook servlet requests
 web:
-  bind_address: 10.13.37.23
+  bind_address: 192.168.0.1
   port: 1337
   log: "./log/web.log"
 # --------------------------
@@ -63,26 +63,26 @@ hooks:
   log: "log/hook_request.log"
   push: 
     - name: "Standard Push Servlet"
-      repo: "git@git.komprest.net:codec/test-project.git"
+      repo: "git@gitlab.example.com:user/project.git"
       ref: "refs/heads/master"
       mount: "/push"
       log_level: "INFO" # "DEBUG", "INFO", "WARN", "ERROR", "FATAL"
       path: "./hooks/push.d"
   tag:
     - name: "Standard Tag Push Servlet"
-      repo: "git@git.komprest.net:codec/test-project.git"
+      repo: "git@gitlab.example.com:user/project.git"
       mount: "/tag"
       log_level: "INFO"
       path: "./hooks/tag.d"
   issue:
     - name: "Standard Issue Servlet"
-      repo: "git@git.komprest.net:codec/test-project.git"
+      repo: "git@gitlab.example.com:user/project.git"
       mount: "/issue"
       log_level: "INFO"
       path: "hooks/issue.d"
   merge:
     - name: "Standard Merge Servlet"
-      repo: "git@git.komprest.net:codec/test-project.git"
+      repo: "git@gitlab.example.com:user/test-project.git"
       mount: "/merge"
       log_level: "INFO"
       path: "./hooks/merge.d"
