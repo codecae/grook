@@ -10,7 +10,7 @@
 # to see all available namespaces and projects.
 #
 gitlab:
-  url: "http://github.example.com"
+  url: "http://gitlab.example.com"
   port: 80
   api_key: "aqs5HC9jQyGJibaeQpyf"
 # ------------------------
