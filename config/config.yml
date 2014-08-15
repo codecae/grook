@@ -10,7 +10,7 @@
 # to see all available namespaces and projects.
 #
 gitlab:
-  url: "http://gitlab.example.com"
+  url: "http://git.komprest.net"
   port: 80
   api_key: "aqs5HC9jQyGJibaeQpyf"
 # ------------------------
@@ -19,7 +19,7 @@ gitlab:
 # Specify the port that grook will use when listening for
 # web hook servlet requests
 web:
-  bind_address: 192.168.0.1
+  bind_address: 10.13.37.78
   port: 1337
   log: "./log/web.log"
 # --------------------------
