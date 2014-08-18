@@ -194,3 +194,20 @@ fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
 Repository equalized successfully
 
 [94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:20:39:35 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:20:39:44 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
