@@ -20,29 +20,31 @@ module Grook
     end
 
     def _call
+			Grook.queue.add_work( Proc.new {
       @log.info { "Hook request received for: \"#{@name}\"" }
       hook_args = _hook_args
       @log.debug { "URL: \"#{@url}\" (config) - \"#{_hook_project["ssh_url_to_repo"]}\" (request)" }
       @log.debug { "REF: \"#{@ref || "n/a"}\" (config) - \"#{_hook_ref || "n/a"}\" (request)" }
       if @url==_hook_project["ssh_url_to_repo"] && @ref==_hook_ref
-	hook_args.each do |args|
-	  @log.debug { "Processing arguements: \"#{args}\"" }
-	  _hooks.each do |hook| 
-	    if File.executable_real?(hook) && File.file?(hook)
-	      @log.debug { "\"#{hook}\" is an executable file" }
-	      script_args=args.map { |a| "\"#{a.to_s.gsub(/"/,"'")}\"" }
-	      @log.info { "Calling: #{hook} #{script_args.join(" ")}" }
-	      %x( #{hook} #{script_args.join(" ")} )
-	    else
-	      @log.warn { "Cannot call #{hook}.  Check file permissions." }
-	    end
-	  end
-	end
+				hook_args.each do |args|
+	  		@log.debug { "Processing arguements: \"#{args}\"" }
+	  		_hooks.each do |hook| 
+	    		if File.executable_real?(hook) && File.file?(hook)
+	      		@log.debug { "\"#{hook}\" is an executable file" }
+	      		script_args=args.map { |a| "\"#{a.to_s.gsub(/"/,"'")}\"" }
+	      		@log.info { "Calling: #{hook} #{script_args.join(" ")}" }
+	      		out = %x( #{hook} #{script_args.join(" ")} )
+	      		@log.info { "Script output: \n#{out}" }
+	    		else
+	      		@log.warn { "Cannot call #{hook}.  Check file permissions." }
+	    		end
+	  		end
+			end
       else
-	@log.warn { "\"#{@name}\" hook skipped!" }
-	@log.warn { "SSH URL on an incoming hook does not match configuration - #{@url || "<Unspecified>" } (config.yml) != #{_hook_project["ssh_url_to_repo"] || "<Unspecified>"} (gitlab)" } unless @url==_hook_project["ssh_url_to_repo"]
-	@log.warn { "Git REF on an incoming hook does not match configuration - #{@ref || "<Unspecified>" } (config.yml) != #{_hook_ref || "<Unspecified>"} (gitlab)" } unless @ref==_hook_ref
-      end
+				@log.warn { "\"#{@name}\" hook skipped!" }
+				@log.warn { "SSH URL on an incoming hook does not match configuration - #{@url || "<Unspecified>" } (config.yml) != #{_hook_project["ssh_url_to_repo"] || "<Unspecified>"} (gitlab)" } unless @url==_hook_project["ssh_url_to_repo"]
+				@log.warn { "Git REF on an incoming hook does not match configuration - #{@ref || "<Unspecified>" } (config.yml) != #{_hook_ref || "<Unspecified>"} (gitlab)" } unless @ref==_hook_ref
+      end } )
     end
 
     def _get(request)

@@ -11,6 +11,7 @@ require 'lib/gitlab'
 require 'lib/webrick'
 require 'lib/hooks'
 require 'lib/log'
+require 'lib/thread_queue'
 
 module Grook
 
@@ -18,6 +19,7 @@ module Grook
       
     attr_reader :gitlab
     attr_reader :server
+		attr_reader :queue
     
     def init
       url = config["gitlab"]["url"]
@@ -27,13 +29,15 @@ module Grook
       if config["web"]["bind_address"].nil?
         puts "!! Bind address not specified.  Listening on all interfaces..."
       else
-	puts sprintf(":: server listening on %s:%d\n",config["web"]["bind_address"],config["web"]["port"])
+				puts sprintf(":: server listening on %s:%d\n",config["web"]["bind_address"],config["web"]["port"])
       end
       @server = WEBrick::HTTPServer.new(:Port => config["web"]["port"],
                                         :BindAddress => config["web"]["bind_address"],
-				        :Logger => WEBrick::Log.new(config["web"]["log"]),
-					:AccessLog => [ [$stderr, WEBrick::AccessLog::COMMON_LOG_FORMAT],
-						        [$stderr, WEBrick::AccessLog::REFERER_LOG_FORMAT] ])
+				        												:Logger => WEBrick::Log.new(config["web"]["log"]),
+																				:AccessLog => [ [$stderr, WEBrick::AccessLog::COMMON_LOG_FORMAT],
+						        																		[$stderr, WEBrick::AccessLog::REFERER_LOG_FORMAT] ])
+			@queue = ThreadQueue.new
+			@queue.run
       # create push hooks
       mount_hooks(config["hooks"]["push"],PushHook)
       # create tag push hooks
@@ -46,8 +50,8 @@ module Grook
 
     def mount_hooks(params,klass)
       params.each do |h|
-	Log.add(h["name"],config["hooks"]["log"],h["log_level"])
-	@server.mount h["mount"], klass, Log[h["name"]], h["name"], h["path"], h["repo"], h["ref"]
+				Log.add(h["name"],config["hooks"]["log"],h["log_level"])
+				@server.mount h["mount"], klass, Log[h["name"]], h["name"], h["path"], h["repo"], h["ref"]
       end
     end
 

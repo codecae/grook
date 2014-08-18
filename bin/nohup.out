@@ -1,0 +1,196 @@
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+/usr/bin/env: ruby: No such file or directory
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+Note: checking out '54276d637f1fdb4a4f57139f231e376157446615'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 54276d6... Initial Commit
+git.komprest.net - - [15/Aug/2014:18:13:35 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 54276d6... Initial Commit
+git.komprest.net - - [15/Aug/2014:18:16:43 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 54276d6... Initial Commit
+git.komprest.net - - [15/Aug/2014:18:20:34 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 54276d6... Initial Commit
+cp: cannot create regular file `/u01/metadata/deploy/catalog/catalog/.git/objects/pack/pack-6a2965abe8a6f4ff881e7656a5cfe5297f787d25.idx': Permission denied
+cp: cannot create regular file `/u01/metadata/deploy/catalog/catalog/.git/objects/pack/pack-6a2965abe8a6f4ff881e7656a5cfe5297f787d25.pack': Permission denied
+git.komprest.net - - [15/Aug/2014:18:22:15 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 39684cc... Migration Test
+git.komprest.net - - [15/Aug/2014:18:40:46 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 3eb31fc... Updated
+git.komprest.net - - [15/Aug/2014:18:41:43 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+Previous HEAD position was 3eb31fc... Updated
+HEAD is now at 54276d6... Initial Commit
+git.komprest.net - - [15/Aug/2014:18:43:24 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 29a1ed2... Migration Test
+git.komprest.net - - [15/Aug/2014:18:45:17 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+From git.komprest.net:business-intelligence/bi-catalog
+ * branch            master     -> FETCH_HEAD
+HEAD is now at 9f7b395... Updated
+git.komprest.net - - [15/Aug/2014:18:47:36 EDT] "POST /catalog-push HTTP/1.1" 200 19
+- -> /catalog-push
+/usr/bin/env: ruby: No such file or directory
+/usr/bin/env: ruby: No such file or directory
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+fatal: reference is not a tree: 3b5934c5275a392b8372f68b689205544430a677
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+fatal: reference is not a tree: 3b5934c5275a392b8372f68b689205544430a677
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+fatal: reference is not a tree: 3b5934c5275a392b8372f68b689205544430a677
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:14:25:32 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:25:42 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:27:07 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+fatal: reference is not a tree: 3b5934c5275a392b8372f68b689205544430a677
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+From git.komprest.net:business-intelligence/rpd
+   3b5934c..831e9c3  master     -> origin/master
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:14:33:37 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:14:35:31 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:14:36:37 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:37:37 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:14:39:07 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:42:07 EDT] "POST /rpd-push HTTP/1.1" 200 19
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:46:14 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:46:34 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:46:46 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+git.komprest.net - - [17/Aug/2014:14:47:31 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+git.komprest.net - - [17/Aug/2014:15:01:10 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:15:05:07 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+fatal: reference is not a tree: 3b5934c5275a392b8372f68b689205544430a677
+From git.komprest.net:business-intelligence/rpd
+ + 831e9c3...3b5934c master     -> origin/master  (forced update)
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+/usr/bin/env: ruby: No such file or directory
+git.komprest.net - - [17/Aug/2014:19:58:48 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+:: grook initializing...
+:: server listening on 10.13.37.78:1337
+:: starting server...
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+From git.komprest.net:business-intelligence/rpd
+   3b5934c..831e9c3  master     -> origin/master
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:20:00:53 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
+git.komprest.net - - [17/Aug/2014:20:01:02 EDT] "POST /rpd-push HTTP/1.1" 200 13
+- -> /rpd-push
+fatal: reference is not a tree: 831e9c3600a2066e24ca9e9e295bde8ba8e84c76
+
+Repository equalized successfully
+
+[94017] Complete success of patch application on customer repository.
